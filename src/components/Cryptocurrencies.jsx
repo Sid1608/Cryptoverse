@@ -9,7 +9,7 @@ const Cryptocurrencies = ({simplified}) => {
     // console.log("Hello",cryptosList);
     const [cryptos, setCryptos]= useState();
     const [searchTerm, setSearchTerm]=useState('')
-    // console.log("Hello",cryptos);
+    console.log("Hello",cryptos);
     //useEffect is the combination of component did mount happening at start and also component dit update
     useEffect(()=>{
         // setCryptos(cryptosList?.data?.coins)
@@ -28,8 +28,8 @@ const Cryptocurrencies = ({simplified}) => {
             {/* gutters: spaces between the article */}
             <Row gutter={[32,32]} className="crypto-card-container">
                 {cryptos?.map((currency)=>{
-                    return <Col xs={24} sm={12} lg={6} className="crypto-card" key={currency.id}>
-                        <Link to={`/crypto/${currency.id}`}>
+                    return <Col xs={24} sm={12} lg={6} className="crypto-card" key={currency.uuid}>
+                        <Link to={`/crypto/${currency.uuid}`}>
                             <Card 
                                 title={`${currency.rank}. ${currency.name}`}
                                 extra={<img className="crypto-image" src={currency.iconUrl}/>}
